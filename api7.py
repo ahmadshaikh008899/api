@@ -26,7 +26,7 @@ def configure_ngrok():
         print(f"Failed to configure ngrok: {str(e)}")
 
 def update_soul_txt(public_url):
-    with open("api6.txt", "w") as file:
+    with open("api7.txt", "w") as file:
         file.write(public_url)
     print(f"New ngrok link saved in eagle3.txt")
 
@@ -40,7 +40,7 @@ def update_vps_soul_txt(public_url):
         ssh.set_missing_host_key_policy(paramiko.AutoAddPolicy())
         ssh.connect(vps_ip, username=vps_user, password=vps_password)
         sftp = ssh.open_sftp()
-        with sftp.open("api6.txt", "w") as file:
+        with sftp.open("api7.txt", "w") as file:
             file.write(public_url)
         sftp.close()
         ssh.close()
